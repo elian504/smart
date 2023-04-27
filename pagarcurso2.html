@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario que aparece al hacer click</title>
+  <style>
+    #formulario {
+        display: none;
+
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 400px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    input, select {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+ 
+</head>
+<body>
+  <button id="mostrar-formulario" onclick="mostrar()">Mostrar formulario</button>
+  <form id="formulario">
+        <label for="card-number">Número de tarjeta:</label>
+        <input type="text" id="card-number" name="card-number" required>
+      
+        <label for="expiry-date">Fecha de caducidad:</label>
+        <select id="expiry-date" name="expiry-date" required>
+          <option value="" disabled selected>Seleccionar mes</option>
+          <option value="01">Enero (01)</option>
+          <option value="02">Febrero (02)</option>
+          <option value="03">Marzo (03)</option>
+          <option value="04">Abril (04)</option>
+          <option value="05">Mayo (05)</option>
+          <option value="06">Junio (06)</option>
+          <option value="07">Julio (07)</option>
+          <option value="08">Agosto (08)</option>
+          <option value="09">Septiembre (09)</option>
+          <option value="10">Octubre (10)</option>
+          <option value="11">Noviembre (11)</option>
+          <option value="12">Diciembre (12)</option>
+        </select>
+      
+        <label for="security-code">Código de seguridad:</label>
+        <input type="text" id="security-code" name="security-code" required>
+      
+        <label for="card-holder-name">Nombre del titular de la tarjeta:</label>
+        <input type="text" id="card-holder-name" name="card-holder-name" required>
+      
+        <label for="billing-address">Dirección de facturación:</label>
+        <input type="text" id="billing-address" name="billing-address" required>
+      
+        <input type="submit" value="Enviar">
+      
+  </form>
+  
+  <script>
+    function mostrar() {
+      var formulario = document.getElementById("formulario");
+      formulario.style.display = "block";
+    }
+  </script>
+</body>
+</html>
